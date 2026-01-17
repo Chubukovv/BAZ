@@ -1,0 +1,773 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+    --gold: #d4af37;
+    --dark-blue: #060b1a;
+    --white: #ffffff;
+}
+
+/* HTML & BODY */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* BODY */
+body {
+    font-family: 'Cinzel', serif;
+    color: var(--white);
+
+    background-image: url("../img/fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+
+/* HEADER */
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+    opacity: 0.7;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 6, 20, 0.75);
+}
+
+/* CONTENIDO HERO */
+.hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 900px;
+    padding: 40px 20px;
+}
+
+/* TITULO */
+.title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* LOGO */
+.logo- {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.logo img {
+    width: 350px;       /* tamaño pequeño */
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+/* SLOGAN */
+.slogan {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+.slogan span {
+    color: var(--gold);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: var(--gold);
+    background-color: rgba(4, 8, 23, 0.85);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 0.8rem;
+    }
+
+    .logo {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+
+
+
+
+/* REDES SOCIALES */
+.social-section {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.social-title {
+    font-size: 1.8rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+}
+
+/* CONTENEDOR */
+.social-cards {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+/* TARJETA */
+.social-card {
+    background: rgba(6, 11, 26, 0.85);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 14px;
+    width: 260px;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--white);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* HOVER */
+.social-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+}
+
+/* ICONO */
+.social-icon {
+    font-size: 2rem;
+}
+
+/* TEXTO */
+.social-info {
+    text-align: left;
+}
+
+.social-name {
+    font-size: 0.9rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.social-user {
+    font-size: 1rem;
+    margin-top: 3px;
+    display: block;
+}
+
+.social-extra {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* WHATSAPP ESPECIAL */
+.social-card.whatsapp {
+    cursor: default;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .social-cards {
+        gap: 25px;
+    }
+
+    .social-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* ============================= */
+/* ANIMACIONES DE ENTRADA */
+/* ============================= */
+
+.reveal-title {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: titleIn 1.2s ease forwards;
+}
+
+.reveal-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: cardIn 1s ease forwards;
+}
+
+/* DELAYS */
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+
+/* KEYFRAMES */
+@keyframes titleIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* NOSOTROS / TRAYECTORIA */
+.about-section {
+    padding: 120px 20px 80px;
+    position: relative;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* TEXTO */
+.about-label {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.about-title {
+    font-size: clamp(2.5rem, 4vw, 3.2rem);
+    margin: 15px 0 30px;
+}
+
+.about-text h3 {
+    color: var(--gold);
+    margin: 30px 0 10px;
+    letter-spacing: 2px;
+}
+
+.about-text p {
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+.about-list {
+    margin-top: 15px;
+    list-style: none;
+}
+
+.about-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.about-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
+/* TARJETAS */
+.about-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-card {
+    background: rgba(6, 11, 26, 0.85);
+    border-left: 3px solid var(--gold);
+    padding: 25px;
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.25);
+}
+
+.info-card h4 {
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+/* FRASE */
+.about-quote {
+    text-align: center;
+    margin-top: 80px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.9;
+}
+
+/* ANIMACIONES */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.fade-up.delay {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+.member-role {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    opacity: 0.85;
+    margin-bottom: 8px;
+}
+
+.member-count {
+    font-size: 0.95rem;
+}
+
+.member-count strong {
+    font-size: 1.5rem;
+    color: var(--gold);
+    display: block;
+}
+
+/* INTEGRANTES */
+.members-section {
+    padding: 120px 20px 90px;
+    text-align: center;
+}
+
+.members-header {
+    max-width: 800px;
+    margin: 0 auto 70px;
+}
+
+.members-label {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.members-title {
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    margin: 15px 0 25px;
+}
+
+.members-intro {
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+/* GRID */
+.members-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 35px;
+}
+
+/* TARJETA */
+.member-card {
+    background: rgba(6, 11, 26, 0.85);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 16px;
+    padding: 40px 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(212, 175, 55, 0.08),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.member-card:hover::after {
+    opacity: 1;
+}
+
+.member-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.25);
+}
+
+.member-card h3 {
+    color: var(--gold);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.member-count {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+/* FRASE */
+.members-quote {
+    margin-top: 90px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.9;
+}
+
+/* ANIMACIONES */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .member-card {
+        padding: 30px 15px;
+    }
+}
+
+
+
+
+
+
+
+/* GIRAS */
+.tours-section {
+    padding: 120px 20px 90px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tours-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.tours-title {
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    margin-bottom: 25px;
+}
+
+.tours-intro {
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 850px;
+    margin: 0 auto 40px;
+}
+
+/* REFRÁN */
+.tours-motto {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+.tours-motto span {
+    color: var(--gold);
+}
+
+/* TIMELINE */
+.tours-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.tour-year {
+    background: rgba(6, 11, 26, 0.85);
+    border-left: 4px solid var(--gold);
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tour-year:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.25);
+}
+
+.tour-year h3 {
+    color: var(--gold);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.tour-year ul {
+    list-style: none;
+}
+
+.tour-year li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 18px;
+    line-height: 1.6;
+}
+
+.tour-year li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
+/* TEXTO FINAL */
+.tours-footer {
+    text-align: center;
+    margin-top: 90px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.9;
+}
+
+/* ANIMACIONES (usa las que ya tienes) */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .tours-intro {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+
+
+
+/* DELEGACIONES */
+.delegations-section {
+    padding: 120px 20px 90px;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.delegations-header {
+    max-width: 850px;
+    margin: 0 auto 80px;
+}
+
+.delegations-title {
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    margin-bottom: 25px;
+}
+
+.delegations-intro {
+    line-height: 1.8;
+    opacity: 0.95;
+    margin-bottom: 40px;
+}
+
+/* REFRÁN */
+.delegations-motto {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+.delegations-motto span {
+    color: var(--gold);
+}
+
+/* GRID */
+.delegations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+/* TARJETA */
+.delegation-card {
+    background: rgba(6, 11, 26, 0.85);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 16px;
+    padding: 50px 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.delegation-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.25);
+}
+
+.delegation-card h3 {
+    color: var(--gold);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.delegation-role {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-bottom: 15px;
+}
+
+.delegation-count strong {
+    font-size: 2rem;
+    color: var(--gold);
+    display: block;
+}
+
+/* FRASE */
+.delegations-quote {
+    margin-top: 90px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.9;
+}
+
+/* ANIMACIONES */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
